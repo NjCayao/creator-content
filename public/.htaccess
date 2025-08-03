@@ -1,0 +1,16 @@
+# Archivo: /creator/public/.htaccess
+# Propósito: Reglas de seguridad para la carpeta public
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Denegar acceso a archivos sensibles
+<FilesMatch "\.(sql|log|ini|conf|env|git)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Forzar HTTPS (descomenta si tienes SSL)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]

@@ -1,0 +1,6 @@
+# Archivo: /creator/config/.htaccess
+# Propósito: Proteger la carpeta config
+
+# Denegar acceso a todos
+Order deny,allow
+Deny from all

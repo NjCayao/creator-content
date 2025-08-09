@@ -41,12 +41,28 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
                 <!-- Contenido -->
                 <li class="nav-header">CONTENIDO</li>
 
+                <!-- Tendencias -->
                 <li class="nav-item">
                     <a href="<?php echo ADMIN_URL; ?>/tendencias.php" class="nav-link <?php echo $currentPage == 'tendencias' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-fire"></i>
                         <p>
                             Tendencias
-                            <span class="badge badge-danger right">HOT</span>
+                            <?php
+                            // Mostrar contador de tendencias disponibles si estamos en una página que ya cargó la BD
+                            if (class_exists('Database')) {
+                                try {
+                                    $db = Database::getInstance()->getConnection();
+                                    $count = $db->query("SELECT COUNT(*) FROM tendencias WHERE usado = 0 AND (expira IS NULL OR expira > NOW())")->fetchColumn();
+                                    if ($count > 0):
+                            ?>
+                                        <span class="right badge badge-danger">HOT</span>
+                            <?php
+                                    endif;
+                                } catch (Exception $e) {
+                                    // Silenciar error
+                                }
+                            }
+                            ?>
                         </p>
                     </a>
                 </li>
@@ -151,6 +167,8 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
                         <p>Logs</p>
                     </a>
                 </li>
+
+                
 
             </ul>
         </nav>

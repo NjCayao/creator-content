@@ -1,0 +1,27 @@
+# Denegar acceso directo a archivos PHP
+<Files "*.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Permitir solo con token válido
+<Files "buscar-tendencias.php">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+    Allow from ::1
+    
+    # Requerir token en query string
+    RewriteEngine On
+    RewriteCond %{QUERY_STRING} !token=
+    RewriteRule .* - [F]
+</Files>
+
+# Denegar listado de directorio
+Options -Indexes
+
+# Proteger archivos de configuración
+<Files "cron-config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>

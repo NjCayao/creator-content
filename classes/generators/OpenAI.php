@@ -87,32 +87,41 @@ class OpenAI
         throw new Exception('Error al generar contenido con OpenAI');
     }
 
-    /**
+     /**
      * Generar guion para video
      */
     public function generateVideoScript($topic, $duration = 60, $type = 'short')
     {
         $durationText = $duration <= 60 ? "$duration segundos" : round($duration / 60, 1) . " minutos";
 
-        $prompt = "Crea un guion para un video viral de $durationText sobre: $topic\n\n";
+        $prompt = "Crea un guion VIRAL y SUPER ATRACTIVO para un video de $durationText sobre: $topic\n\n";
+        $prompt .= "IMPORTANTE: El video debe ser EXTREMADAMENTE cautivador desde el primer segundo.\n\n";
         $prompt .= "Estructura requerida:\n";
 
         if ($type == 'short') {
-            $prompt .= "1. Hook (0-3 segundos): Una frase o pregunta impactante que capture la atención inmediatamente\n";
-            $prompt .= "2. Desarrollo (3-" . ($duration - 15) . " segundos): Información fascinante, datos curiosos o historia\n";
-            $prompt .= "3. Climax (" . ($duration - 15) . "-" . ($duration - 5) . " segundos): El punto más interesante o revelador\n";
-            $prompt .= "4. Call to Action (" . ($duration - 5) . "-$duration segundos): Invitación a seguir, comentar o compartir\n\n";
+            $prompt .= "1. Hook (0-3 segundos): Una frase o pregunta MUY impactante que OBLIGUE a seguir viendo. Debe crear curiosidad extrema o shock.\n";
+            $prompt .= "2. Desarrollo (3-" . ($duration - 15) . " segundos): Información fascinante presentada de forma dinámica. Usa datos sorprendentes, giros inesperados.\n";
+            $prompt .= "3. Climax (" . ($duration - 15) . "-" . ($duration - 5) . " segundos): El momento más impactante, revelador o emotivo.\n";
+            $prompt .= "4. Call to Action (" . ($duration - 5) . "-$duration segundos): Invitación directa y urgente a seguir, comentar o compartir.\n\n";
+            
+            $prompt .= "REGLAS ADICIONALES para hacerlo VIRAL:\n";
+            $prompt .= "- El hook debe generar una emoción fuerte (sorpresa, curiosidad, miedo, asombro)\n";
+            $prompt .= "- Usa lenguaje conversacional y directo\n";
+            $prompt .= "- Incluye elementos de suspenso o misterio\n";
+            $prompt .= "- Menciona datos específicos y números impactantes\n";
+            $prompt .= "- Crea urgencia o FOMO (miedo a perderse algo)\n\n";
         } else {
-            $prompt .= "1. Introducción (0-20 segundos): Presentación del tema y lo que aprenderán\n";
-            $prompt .= "2. Desarrollo (20 segundos-" . ($duration - 40) . " segundos): Contenido principal dividido en puntos claros\n";
-            $prompt .= "3. Conclusión (" . ($duration - 40) . "-" . ($duration - 20) . " segundos): Resumen de puntos clave\n";
-            $prompt .= "4. Call to Action (" . ($duration - 20) . "-$duration segundos): Qué hacer después\n\n";
+            $prompt .= "1. Introducción (0-20 segundos): Gancho poderoso + promesa clara de valor\n";
+            $prompt .= "2. Desarrollo (20 segundos-" . ($duration - 40) . " segundos): Contenido principal con ritmo dinámico\n";
+            $prompt .= "3. Conclusión (" . ($duration - 40) . "-" . ($duration - 20) . " segundos): Resumen impactante\n";
+            $prompt .= "4. Call to Action (" . ($duration - 20) . "-$duration segundos): Acción específica\n\n";
         }
 
-        $prompt .= "Formato de respuesta en JSON con esta estructura:\n";
+        $prompt .= "Formato de respuesta OBLIGATORIO en JSON:\n";
         $prompt .= '{"hook": "...", "desarrollo": ["punto1", "punto2", ...], "climax": "...", "call_to_action": "...", "hashtags": ["#hashtag1", "#hashtag2", ...]}';
+        $prompt .= "\n\nIMPORTANTE: El contenido debe ser 100% factual y verificable.";
 
-        $content = $this->generateContent($prompt, 0.7);
+        $content = $this->generateContent($prompt, 0.8);
 
         // Intentar parsear como JSON
         $json = json_decode($content, true);

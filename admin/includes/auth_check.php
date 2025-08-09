@@ -3,10 +3,16 @@
 // Propósito: Verificar autenticación en cada página del admin
 
 // Definir acceso seguro
-define('SECURE_ACCESS', true);
+if (!defined('SECURE_ACCESS')) {
+    define('SECURE_ACCESS', true);
+}
 
 // Cargar configuración
 require_once __DIR__ . '/../../config/config.php';
+
+if (isset($_SESSION['user_id'])) {
+    $_SESSION['last_activity'] = time();
+}
 
 // Cargar clases necesarias
 require_once CLASSES_PATH . '/core/Database.php';

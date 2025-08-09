@@ -8,3 +8,17 @@
 [02-Aug-2025 00:12:28 America/Lima] PHP Fatal error:  Cannot redeclare getConfig() (previously declared in C:\xampp\htdocs\creator\admin\plataformas.php:46) in C:\xampp\htdocs\creator\admin\includes\functions.php on line 161
 [02-Aug-2025 00:12:41 America/Lima] PHP Fatal error:  Cannot redeclare getConfig() (previously declared in C:\xampp\htdocs\creator\admin\plataformas.php:46) in C:\xampp\htdocs\creator\admin\includes\functions.php on line 161
 [02-Aug-2025 00:14:28 America/Lima] PHP Fatal error:  Cannot redeclare getConfig() (previously declared in C:\xampp\htdocs\creator\admin\plataformas.php:46) in C:\xampp\htdocs\creator\admin\includes\functions.php on line 161
+[02-Aug-2025 23:18:16 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:18:18 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:18:22 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:18:25 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:50:49 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:52:39 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:53:01 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:54:08 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:54:44 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:55:27 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:55:36 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:56:12 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:56:43 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
+[02-Aug-2025 23:56:46 America/Lima] PHP Warning:  Constant SECURE_ACCESS already defined in C:\xampp\htdocs\creator\admin\includes\auth_check.php on line 6
